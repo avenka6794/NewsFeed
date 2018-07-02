@@ -1,0 +1,182 @@
+doctype html
+head
+  // Mobile Specific Meta
+  meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  // Favicon
+  link(rel='shortcut icon', href='img/fav.png')
+  // Author Meta
+  meta(name='author', content='colorlib')
+  // Meta Description
+  meta(name='description', content='')
+  // Meta Keyword
+  meta(name='keywords', content='')
+  // meta character set
+  meta(charset='UTF-8')
+  // Site Title
+  title Magazine
+  link(href='https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700', rel='stylesheet')
+  //
+    CSS
+    =============================================
+  link(rel='stylesheet', href='css/linearicons.css')
+  link(rel='stylesheet', href='css/font-awesome.min.css')
+  link(rel='stylesheet', href='css/bootstrap.css')
+  link(rel='stylesheet', href='css/magnific-popup.css')
+  link(rel='stylesheet', href='css/nice-select.css')
+  link(rel='stylesheet', href='css/animate.min.css')
+  link(rel='stylesheet', href='css/owl.carousel.css')
+  link(rel='stylesheet', href='css/jquery-ui.css')
+  link(rel='stylesheet', href='css/main.css')
+header
+  .header-top
+    .container
+      .row
+        .col-lg-6.col-md-6.col-sm-6.col-6.header-top-left.no-padding
+          ul
+            li
+              a(href='https://www.facebook.com/colorlib')
+                i.fa.fa-facebook
+            li
+              a(href='https://twitter.com/colorlib')
+                i.fa.fa-twitter
+        .col-lg-6.col-md-6.col-sm-6.col-6.header-top-right.no-padding
+          ul
+            li
+              a(href='mailto:support@colorlib.com')
+                span.lnr.lnr-envelope
+                span support@colorlib.com
+  .logo-wrap
+    .container
+      .row.justify-content-between.align-items-center
+        .col-lg-4.col-md-4.col-sm-12.logo-left.no-padding
+          a(href='index.html')
+            img.img-fluid(src='img/logo.png', alt='')
+        .col-lg-8.col-md-8.col-sm-12.logo-right.no-padding.ads-banner
+          img.img-fluid(src='img/banner-ad.jpg', alt='')
+  #main-menu.container.main-menu
+    .row.align-items-center.justify-content-between
+      nav#nav-menu-container
+        ul.nav-menu
+          li.menu-active
+            a(href='/') Home
+          li
+            a(href='/category?q=politics') Politics
+          li
+            a(href='/category?q=world') World
+          li
+            a(href='/category?q=business') Business
+          li
+            a(href='/category?q=arts') Arts
+          li
+            a(href='/category?q=science') Science
+          li
+            a(href='/category?q=food') Food
+          li
+            a(href='/category?q=travel') Travel
+      // #nav-menu-container
+      .navbar-right
+        form.Search(action="/search", method="POST")
+          input#Search-box.form-control.Search-box(type='text', name='Search-box', placeholder='Search')
+          label.Search-box-label(for='Search-box')
+            span.lnr.lnr-magnifier
+          span.Search-close
+            span.lnr.lnr-cross
+.site-main-container
+  // Start top-post Area
+  section.top-post-area.pt-10
+    .container.no-padding
+      .row
+        .col-lg-12
+          .hero-nav-area
+            h1.text-white Search
+            p.text-white.link-nav
+              a(href='index.html') Results 
+              span.lnr.lnr-arrow-right
+              a(href='archive.html')= query 
+  // End top-post Area
+  // Start latest-post Area
+  section.latest-post-area.pb-120
+    .container.no-padding
+      .row
+        .col-lg-12.post-list
+          // Start latest-post Area
+          .latest-post-wrap
+            h4.cat-title Results
+            each val in results
+              .single-latest-post.row.align-items-center
+                .col-lg-5.post-left
+                  .feature-img.relative
+                    .overlay.overlay-bg
+                    img.img-fluid(src=val.multimedia[4].url, alt='')
+                  ul.tags
+                    li
+                      a(href='#')= val.section_name
+                .col-lg-7.post-right
+                  a(href='/post?q='+val.web_url)
+                    h4
+                      | #{val.headline.main}
+                  ul.meta
+                    li
+                      a(href='#')
+                        span.lnr.lnr-user
+                        | #{val.byline.original}
+                    li
+                      a(href='#')
+                        span.lnr.lnr-calendar-full
+                        | #{val.pub_date}
+                  p.excert
+                    | #{val.abstract}
+  // End latest-post Area
+// start footer Area
+footer.footer-area.section-gap
+  .container
+    .row
+      .col-lg-2.col-md-6.single-footer-widget
+        h4 Products
+        ul
+          li
+            a(href='#') Magezine
+      .col-lg-2.col-md-6.single-footer-widget
+        h4 Quick Links
+        ul
+          li
+            a(href='https://nytimes.com') New York Times
+      .col-lg-2.col-md-6.single-footer-widget
+        h4 Contact
+        ul
+          li
+            a(href='#') Email: abhisaivenkat@gmail.com
+          li
+            a(href='https://github.com/avenka6794') Github
+    .footer-bottom.row.align-items-center
+      p.footer-text.m-0.col-lg-8.col-md-12
+        // Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+        | Copyright &copy;
+        script.
+          document.write(new Date().getFullYear());
+        |  All rights reserved | This template is made with 
+        i.fa.fa-heart-o(aria-hidden='true')
+        |  by 
+        a(href='https://colorlib.com', target='_blank') Colorlib
+        // Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+      .col-lg-4.col-md-12.footer-social
+        a(href='https://www.facebook.com/colorlib')
+          i.fa.fa-facebook
+        a(href='https://twitter.com/colorlib')
+          i.fa.fa-twitter
+// End footer Area
+script(src='js/vendor/jquery-2.2.4.min.js')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q', crossorigin='anonymous')
+script(src='js/vendor/bootstrap.min.js')
+script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA')
+script(src='js/easing.min.js')
+script(src='js/hoverIntent.js')
+script(src='js/superfish.min.js')
+script(src='js/jquery.ajaxchimp.min.js')
+script(src='js/jquery.magnific-popup.min.js')
+script(src='js/mn-accordion.js')
+script(src='js/jquery-ui.js')
+script(src='js/jquery.nice-select.min.js')
+script(src='js/owl.carousel.min.js')
+script(src='js/mail-script.js')
+script(src='js/main.js')

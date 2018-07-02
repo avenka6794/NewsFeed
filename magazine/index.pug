@@ -1,0 +1,583 @@
+doctype html
+head
+  // Mobile Specific Meta
+  meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  // Favicon
+  link(rel='shortcut icon', href='img/fav.png')
+  // Author Meta
+  meta(name='author', content='colorlib')
+  // Meta Description
+  meta(name='description', content='')
+  // Meta Keyword
+  meta(name='keywords', content='')
+  // meta character set
+  meta(charset='UTF-8')
+  // Site Title
+  title Magazine
+  link(href='https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700', rel='stylesheet')
+  //
+    CSS
+    =============================================
+  link(rel='stylesheet', href='css/linearicons.css')
+  link(rel='stylesheet', href='css/font-awesome.min.css')
+  link(rel='stylesheet', href='css/bootstrap.css')
+  link(rel='stylesheet', href='css/magnific-popup.css')
+  link(rel='stylesheet', href='css/nice-select.css')
+  link(rel='stylesheet', href='css/animate.min.css')
+  link(rel='stylesheet', href='css/owl.carousel.css')
+  link(rel='stylesheet', href='css/jquery-ui.css')
+  link(rel='stylesheet', href='css/main.css')
+header
+  .header-top
+    .container
+      .row
+        .col-lg-6.col-md-6.col-sm-6.col-6.header-top-left.no-padding
+          ul
+            li
+              a(href='https://www.facebook.com/colorlib')
+                i.fa.fa-facebook
+            li
+              a(href='https://twitter.com/colorlib')
+                i.fa.fa-twitter
+        .col-lg-6.col-md-6.col-sm-6.col-6.header-top-right.no-padding
+          ul
+            li
+              a(href='mailto:support@colorlib.com')
+                span.lnr.lnr-envelope
+                span support@colorlib.com
+  .logo-wrap
+    .container
+      .row.justify-content-between.align-items-center
+        .col-lg-4.col-md-4.col-sm-12.logo-left.no-padding
+          a(href="/")
+            img.img-fluid(src='img/logo.png', alt='')
+        .col-lg-8.col-md-8.col-sm-12.logo-right.no-padding.ads-banner
+          img.img-fluid(src='img/banner-ad.jpg', alt='')
+  #main-menu.container.main-menu
+    .row.align-items-center.justify-content-between
+      nav#nav-menu-container
+        ul.nav-menu
+          li.menu-active
+            a(href='/') Home
+          li
+            a(href='/category?q=politics') Politics
+          li
+            a(href='/category?q=world') World
+          li
+            a(href='/category?q=business') Business
+          li
+            a(href='/category?q=arts') Arts
+          li
+            a(href='/category?q=science') Science
+          li
+            a(href='/category?q=food') Food
+          li
+            a(href='/category?q=travel') Travel  
+      // #nav-menu-container
+      .navbar-right
+        form.Search(action="/search", method="POST")
+          input#Search-box.form-control.Search-box(type='text', name='Search-box', placeholder='Search')
+          label.Search-box-label(for='Search-box')
+            span.lnr.lnr-magnifier
+          span.Search-close
+            span.lnr.lnr-cross
+.site-main-container
+  // Start top-post Area
+  section.top-post-area.pt-10
+    .container.no-padding
+      .row.small-gutters
+        .col-lg-8.top-post-left
+          .feature-image-thumb.relative
+            .overlay.overlay-bg
+            img.img-fluid(src=popular[0].media[0]["media-metadata"][4].url, alt='')
+          .top-post-details
+            ul.tags
+              li
+                a(href='#')= popular[0].section
+            a(href='/post?q='+popular[0].url)
+              h3= popular[0].title 
+            ul.meta
+              li
+                a(href='#')
+                  span.lnr.lnr-user
+                  | #{popular[0].byline}
+              li
+                a(href='#')
+                  span.lnr.lnr-calendar-full
+                  | #{popular[0].published_date}
+        .col-lg-4.top-post-right
+          .single-top-post
+            .feature-image-thumb.relative
+              .overlay.overlay-bg
+              img.img-fluid(src=popular[1].media[0]["media-metadata"][9].url, alt='')
+            .top-post-details
+              ul.tags
+                li
+                  a(href='#')= popular[1].section
+              a(href='/post?q='+popular[1].url)
+                h4= popular[1].title
+              ul.meta
+                li
+                  a(href='#')
+                    span.lnr.lnr-user
+                    | #{popular[1].byline}
+                li
+                  a(href='#')
+                    span.lnr.lnr-calendar-full
+                    | #{popular[1].published_date}
+          .single-top-post.mt-10
+            .feature-image-thumb.relative
+              .overlay.overlay-bg
+              img.img-fluid(src=popular[2].media[0]["media-metadata"][9].url, alt='')
+            .top-post-details
+              ul.tags
+                li
+                  a(href='#')= popular[2].section
+              a(href='/post?q='+popular[2].url)
+                h4= popular[2].title
+              ul.meta
+                li
+                  a(href='#')
+                    span.lnr.lnr-user
+                    | #{popular[2].byline}
+                li
+                  a(href='#')
+                    span.lnr.lnr-calendar-full
+                    | #{popular[2].published_date}
+        
+  // End top-post Area
+  // Start latest-post Area
+  section.latest-post-area.pb-120
+    .container.no-padding
+      .row
+        .col-lg-8.post-list
+          // Start latest-post Area
+          .latest-post-wrap
+            h4.cat-title Latest News
+            .single-latest-post.row.align-items-center
+              .col-lg-5.post-left
+                .feature-img.relative
+                  .overlay.overlay-bg
+                  img.img-fluid(src=latest[0].multimedia[4].url, alt='')
+                ul.tags
+                  li
+                    a(href='#')= latest[0].section
+              .col-lg-7.post-right
+                a(href='/post?q='+latest[0].url)
+                  h4
+                    | #{latest[0].title}
+                ul.meta
+                  li
+                    a(href='#')
+                      span.lnr.lnr-user
+                      | #{latest[0].byline}
+                  li
+                    a(href='#')
+                      span.lnr.lnr-calendar-full
+                      | #{latest[0].published_date}
+                p.excert
+                  | #{latest[0].abstract}
+            .single-latest-post.row.align-items-center
+              .col-lg-5.post-left
+                .feature-img.relative
+                  .overlay.overlay-bg
+                  img.img-fluid(src=latest[1].multimedia[4].url, alt='')
+                ul.tags
+                  li
+                    a(href='#')= latest[1].section
+              .col-lg-7.post-right
+                a(href='/post?q='+latest[1].url)
+                  h4
+                    | #{latest[1].title}
+                ul.meta
+                  li
+                    a(href='#')
+                      span.lnr.lnr-user
+                      | #{latest[1].byline}
+                  li
+                    a(href='#')
+                      span.lnr.lnr-calendar-full
+                      | #{latest[1].published_date}
+                p
+                  | #{latest[1].abstract}
+            .single-latest-post.row.align-items-center
+              .col-lg-5.post-left
+                .feature-img.relative
+                  .overlay.overlay-bg
+                  img.img-fluid(src=latest[2].multimedia[4].url, alt='')
+                ul.tags
+                  li
+                    a(href='#')= latest[2].section
+              .col-lg-7.post-right
+                a(href='/post?q='+latest[2].url)
+                  h4
+                    | #{latest[2].title}
+                ul.meta
+                  li
+                    a(href='#')
+                      span.lnr.lnr-user
+                      | #{latest[2].byline}
+                  li
+                    a(href='#')
+                      span.lnr.lnr-calendar-full
+                      | #{latest[2].published_date}
+                p
+                  | #{latest[2].abstract}
+            .single-latest-post.row.align-items-center
+              .col-lg-5.post-left
+                .feature-img.relative
+                  .overlay.overlay-bg
+                  img.img-fluid(src=latest[3].multimedia[4].url, alt='')
+                ul.tags
+                  li
+                    a(href='#')= latest[3].section
+              .col-lg-7.post-right
+                a(href='/post?q='+latest[3].url)
+                  h4
+                    | #{latest[3].title}
+                ul.meta
+                  li
+                    a(href='#')
+                      span.lnr.lnr-user
+                      | #{latest[3].byline}
+                  li
+                    a(href='#')
+                      span.lnr.lnr-calendar-full
+                      | #{latest[3].published_date}
+                p
+                  | #{latest[3].abstract}
+          // End latest-post Area
+          // Start banner-ads Area
+          .col-lg-12.ad-widget-wrap.mt-30.mb-30
+            img.img-fluid(src='img/banner-ad.jpg', alt='')
+          // End banner-ads Area
+          // Start popular-post Area
+          .popular-post-wrap
+            h4.title Science
+            .feature-post.relative
+              .feature-img.relative
+                .overlay.overlay-bg
+                img.img-fluid(src=science[0].multimedia[4].url, alt='')
+              .details
+                ul.tags
+                  li
+                    a(href='#')= science[0].section
+                a(href='/post?q='+science[0].url)
+                  h3= science[0].title
+                ul.meta
+                  li
+                    a(href='#')
+                      span.lnr.lnr-user
+                      | #{science[0].byline}
+                  li
+                    a(href='#')
+                      span.lnr.lnr-calendar-full
+                      | #{science[0].published_date}
+
+            .row.mt-20.medium-gutters
+              .col-lg-6.single-popular-post
+                .feature-img-wrap.relative
+                  .feature-img.relative
+                    .overlay.overlay-bg
+                    img.img-fluid(src=science[1].multimedia[4].url, alt='')
+                  ul.tags
+                    li
+                      a(href='#')= science[1].section
+                .details
+                  a(href='/post?q='+science[1].url)
+                    h4
+                      | #{science[1].title}
+                  ul.meta
+                    li
+                      a(href='#')
+                        span.lnr.lnr-user
+                        | #{science[1].byline}
+                    li
+                      a(href='#')
+                        span.lnr.lnr-calendar-full
+                        | #{science[1].published_date}
+                  p.excert
+                    | #{science[1].abstract}
+              .col-lg-6.single-popular-post
+                .feature-img-wrap.relative
+                  .feature-img.relative
+                    .overlay.overlay-bg
+                    img.img-fluid(src=science[2].multimedia[4].url, alt='')
+                  ul.tags
+                    li
+                      a(href='#')= science[2].section
+                .details
+                  a(href='/post?q='+science[2].url)
+                    h4
+                      | #{science[2].title}
+                  ul.meta
+                    li
+                      a(href='#')
+                        span.lnr.lnr-user
+                        | #{science[2].byline}
+                    li
+                      a(href='#')
+                        span.lnr.lnr-calendar-full
+                        | #{science[2].published_date}
+                  p.excert
+                    | #{science[2].abstract}
+          // End popular-post Area
+          // Start relavent-story-post Area
+          .relavent-story-post-wrap.mt-30
+            h4.title Sports
+            .relavent-story-list-wrap
+              .single-relavent-post.row.align-items-center
+                .col-lg-5.post-left
+                  .feature-img.relative
+                    .overlay.overlay-bg
+                    img.img-fluid(src=sports[0].multimedia[4].url, alt='')
+                  ul.tags
+                    li
+                      a(href='#')= sports[0].section
+                .col-lg-7.post-right
+                  a(href='/post?q='+sports[0].url)
+                    h4
+                      | #{sports[0].title}
+                  ul.meta
+                    li
+                      a(href='#')
+                        span.lnr.lnr-user
+                        | #{sports[0].byline}
+                    li
+                      a(href='#')
+                        span.lnr.lnr-calendar-full
+                        | #{sports[0].published_date}
+                  p.excert
+                    | #{sports[0].abstract}
+              .single-relavent-post.row.align-items-center
+                .col-lg-5.post-left
+                  .feature-img.relative
+                    .overlay.overlay-bg
+                    img.img-fluid(src=sports[1].multimedia[4].url, alt='')
+                  ul.tags
+                    li
+                      a(href='#')= sports[1].section
+                .col-lg-7.post-right
+                  a(href='/post?q='+sports[1].url)
+                    h4
+                      | #{sports[1].title}
+                  ul.meta
+                    li
+                      a(href='#')
+                        span.lnr.lnr-user
+                        | #{sports[1].byline}
+                    li
+                      a(href='#')
+                        span.lnr.lnr-calendar-full
+                        | #{sports[1].published_date}
+                  p.excert
+                    | #{sports[1].abstract}
+              .single-relavent-post.row.align-items-center
+                .col-lg-5.post-left
+                  .feature-img.relative
+                    .overlay.overlay-bg
+                    img.img-fluid(src=sports[2].multimedia[4].url, alt='')
+                  ul.tags
+                    li
+                      a(href='#')= sports[2].section
+                .col-lg-7.post-right
+                  a(href='/post?q='+sports[2].url)
+                    h4
+                      | #{sports[2].title}
+                  ul.meta
+                    li
+                      a(href='#')
+                        span.lnr.lnr-user
+                        | #{sports[2].byline}
+                    li
+                      a(href='#')
+                        span.lnr.lnr-calendar-full
+                        | #{sports[2].published_date}
+                  p.excert
+                    | #{sports[2].abstract}
+          // End relavent-story-post Area
+        .col-lg-4
+          .sidebars-area
+            .single-sidebar-widget.editors-pick-widget
+              h6.title Technology
+              .editors-pick-post
+                .feature-img-wrap.relative
+                  .feature-img.relative
+                    .overlay.overlay-bg
+                    img.img-fluid(src=technology[0].multimedia[4].url, alt='')
+                  ul.tags
+                    li
+                      a(href='#')= technology[0].section
+                .details
+                  a(href='/post?q='+technology[0].url)
+                    h4.mt-20
+                      | #{technology[0].title}
+                  ul.meta
+                    li
+                      a(href='#')
+                        span.lnr.lnr-user
+                        | #{technology[0].byline}
+                    li
+                      a(href='#')
+                        span.lnr.lnr-calendar-full
+                        | #{technology[0].published_date}
+                  p.excert
+                    | #{technology[0].abstract}
+                .post-lists
+                  .single-post.d-flex.flex-row
+                    .thumb
+                      img(src=technology[1].multimedia[0].url, alt='')
+                    .detail
+                      a(href='/post?q='+technology[1].url)
+                        h6
+                          | #{technology[1].title}
+                      ul.meta
+                        li
+                          a(href='#')
+                            span.lnr.lnr-calendar-full
+                            | #{technology[1].published_date}
+                  .single-post.d-flex.flex-row
+                    .thumb
+                      img(src=technology[2].multimedia[0].url, alt='')
+                    .detail
+                      a(href='/post?q='+technology[2].url)
+                        h6
+                          | #{technology[2].title}
+                      ul.meta
+                        li
+                          a(href='#')
+                            span.lnr.lnr-calendar-full
+                            | #{technology[2].published_date}
+                  .single-post.d-flex.flex-row
+                    .thumb
+                      img(src=technology[3].multimedia[0].url, alt='')
+                    .detail
+                      a(href='/post?q='+technology[3].url)
+                        h6
+                          | #{technology[3].title}
+                      ul.meta
+                        li
+                          a(href='#')
+                            span.lnr.lnr-calendar-full
+                            | #{technology[3].published_date}
+            .single-sidebar-widget.ads-widget
+              img.img-fluid(src='img/sidebar-ads.jpg', alt='')
+            .single-sidebar-widget.newsletter-widget
+              h6.title Newsletter
+              p
+                | Subscribe to our mailing list!
+              .form-group.d-flex.flex-row
+                .col-autos
+                  .input-group
+                    input.form-control(placeholder='Email Address', onfocus="this.placeholder = ''", onblur="this.placeholder = 'Email Address'", type='text')
+                a.bbtns(href='#') Subcribe
+              p
+                | You can unsubscribe us at any time.
+            .single-sidebar-widget.most-popular-widget
+              h6.title Travel
+              .single-list.flex-row.d-flex
+                .thumb
+                  img(src=travel[0].multimedia[0].url, alt='')
+                .details
+                  a(href='/post?q='+travel[0].url)
+                    h6
+                      | #{travel[0].title}
+                  ul.meta
+                    li
+                      a(href='#')
+                        span.lnr.lnr-calendar-full
+                        | #{travel[0].published_date}
+
+              .single-list.flex-row.d-flex
+                .thumb
+                  img(src=travel[1].multimedia[0].url, alt='')
+                .details
+                  a(href='/post?q='+travel[1].url)
+                    h6
+                      | #{travel[1].title}
+                  ul.meta
+                    li
+                      a(href='#')
+                        span.lnr.lnr-calendar-full
+                        | #{travel[1].published_date}
+
+              .single-list.flex-row.d-flex
+                .thumb
+                  img(src=travel[2].multimedia[0].url, alt='')
+                .details
+                  a(href='/post?q='+travel[2].url)
+                    h6
+                      | #{travel[2].title}
+                  ul.meta
+                    li
+                      a(href='#')
+                        span.lnr.lnr-calendar-full
+                        | #{travel[2].published_date}
+
+              .single-list.flex-row.d-flex
+                .thumb
+                  img(src=travel[3].multimedia[0].url, alt='')
+                .details
+                  a(href='/post?q='+travel[3].url)
+                    h6
+                      | #{travel[3].title}
+                  ul.meta
+                    li
+                      a(href='#')
+                        span.lnr.lnr-calendar-full
+                        | #{travel[3].published_date}
+  
+  // End latest-post Area
+// start footer Area
+footer.footer-area.section-gap
+  .container
+    .row
+      .col-lg-2.col-md-6.single-footer-widget
+        h4 Products
+        ul
+          li
+            a(href='#') Magezine
+      .col-lg-2.col-md-6.single-footer-widget
+        h4 Quick Links
+        ul
+          li
+            a(href='https://nytimes.com') New York Times
+      .col-lg-2.col-md-6.single-footer-widget
+        h4 Contact
+        ul
+          li
+            a(href='#') Email: abhisaivenkat@gmail.com
+          li
+            a(href='https://github.com/avenka6794') Github
+    .footer-bottom.row.align-items-center
+      p.footer-text.m-0.col-lg-8.col-md-12
+        // Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+        | Copyright &copy;
+        script.
+          document.write(new Date().getFullYear());
+        |  All rights reserved | This template is made with 
+        i.fa.fa-heart-o(aria-hidden='true')
+        |  by 
+        a(href='https://colorlib.com', target='_blank') Colorlib
+        // Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+      .col-lg-4.col-md-12.footer-social
+        a(href='https://www.facebook.com/colorlib')
+          i.fa.fa-facebook
+        a(href='https://twitter.com/colorlib')
+          i.fa.fa-twitter
+// End footer Area
+script(src='js/vendor/jquery-2.2.4.min.js')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q', crossorigin='anonymous')
+script(src='js/vendor/bootstrap.min.js')
+script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA')
+script(src='js/easing.min.js')
+script(src='js/hoverIntent.js')
+script(src='js/superfish.min.js')
+script(src='js/jquery.ajaxchimp.min.js')
+script(src='js/jquery.magnific-popup.min.js')
+script(src='js/mn-accordion.js')
+script(src='js/jquery-ui.js')
+script(src='js/jquery.nice-select.min.js')
+script(src='js/owl.carousel.min.js')
+script(src='js/mail-script.js')
+script(src='js/main.js')
