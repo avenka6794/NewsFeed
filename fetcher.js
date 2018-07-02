@@ -1,7 +1,7 @@
 var request = require('request');
 //config
-var lateralKey = "ec60b77ed62c58e872a2bba620a4c899";
-var timesKey = "4fea4b9b548c41e9bf0714a2ca762e4b";
+var lateralKey = "******";
+var timesKey = "******";
 
 var lateralUrl = "https://document-parser-api.lateral.io/"
 
